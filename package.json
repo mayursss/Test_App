@@ -1,0 +1,35 @@
+{
+  "name": "test_app",
+  "version": "1.0.0",
+  "description": "Test Add for node-powershell",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayursss/Test_App.git"
+  },
+  "author": "Mayur Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mayursss/Test_App/issues"
+  },
+  "homepage": "https://github.com/mayursss/Test_App#readme",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "express": "^4.16.4",
+    "node-powershell": "^3.3.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.9"
+  }
+}

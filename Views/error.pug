@@ -1,0 +1,5 @@
+.alert.alert-danger(style={display:'block'})
+  each err,index in error
+    div(style={color:'black',padding:'0.5rem 0'})
+      span(style={'font-weight':'bold'})=index+': '
+      span(style={color:'#c70e0e'})=err
