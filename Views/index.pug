@@ -1,18 +1,25 @@
 extends layout
 
 block content
-  h1 #{title}
-  .row.justify-content-center.top-buffer
-    form(action="get-drives", method="get")
-      button.btn.btn-outline-info.btn-block(type="submit") Get-Drives 
-    form(action="get-process", method="get")
-      button.btn.btn-outline-info.btn-block(type="submit") Get-Process
-    form(action="get-userinfo", method="get")
-      button.btn.btn-outline-info.btn-block(type="submit") Get-userInfo
-  .row.justify-content-center.top-buffer
-    if error
+  div.container
+    form(action='/runscript' method='post')
+      div.form-group
+        label Server Name
+        textarea.form-control(rows="5" name="server_name")
+      div.form-check
+        input.from-check-input(type="radio", name="script" value="Get-Drives")
+        label.from-check-lable.ml-1 Get-Drives
+      div.form-check
+        input.from-check-input(type="radio", name="script1" value="New-confPage" disabled)
+        label.from-check-lable.ml-1 Create OAT Confluence page
+      div.form-group
+        p
+        button.btn.btn-outline-info(type="submit") Submit
+    if errors
       include error
-    table.table-sm.table-striped.rounded.border.border-info(cellspacing='0')
-    if GetDrives
-    if GetProcess
-    if GetUserInfo
+    //- else
+    //-   div.alert.alert-success.mt-2(style={display:'block'})
+    //-     span Validation Success
+    if dataSet
+      include out
+      

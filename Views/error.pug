@@ -1,5 +1,7 @@
-.alert.alert-danger(style={display:'block'})
-  each err,index in error
-    div(style={color:'black',padding:'0.5rem 0'})
-      span(style={'font-weight':'bold'})=index+': '
-      span(style={color:'#c70e0e'})=err
+div.alert.alert-danger.mt-2(style={display:'block'})
+  if (typeof(errors) == 'string')
+    =errors
+  else
+    each err,index in errors
+      div(style={color:'black',padding:'0.5rem 0'})
+        span(style={color:'#c70e0e'})=err.msg

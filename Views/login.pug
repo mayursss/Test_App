@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div.container
+    h1 #{title}
+    form(action="/loginCheck",method="post")
+      .form-group
+        label(for="username") User Name
+        br
+        input(type="text" , name="userName")
+      .form-group
+        label(for="password") Password
+        br
+        input(type="password" , name="password")
+      button.btn.btn-outline-info(type="submit") Submit
+    if success
+      div.alert.alert-success.mt-2(style={display:'block'})
+        span Validation Success
+    else
+      if errors
+        include error
+        //- div.alert.alert-danger.mt-2(style={display:'block'})
+        //-   each err in errors
+        //-     div(style={color:'black',padding:'0.5rem 0'})
+        //-       span(style={color:'#c70e0e'})=err.msg
+
+
+  
